@@ -1,0 +1,26 @@
+#      Licensed Materials - Property of IBM
+#
+#      © IBM Corp. 2016
+policy: 1.0.0
+info:
+    title: Latency Injector
+    name: latencyinjector
+    version: 1.0.0
+    description: Policy to insert artifial latency into an API
+    contact:
+        name: Chris Phillips
+        email: chris.phillips@uk.ibm.com
+attach:
+    - rest
+properties:
+    $schema: "http://json-schema.org/draft-04/schema#"
+    type: object
+    properties:
+        latencytoadd:
+            label: Latency to Add
+            description: The amount of latency in ms you wish to add to the request.
+            type: number
+    required:
+        - latencytoadd
+gateways:
+    - datapower-gateway
